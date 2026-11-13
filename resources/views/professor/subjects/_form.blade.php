@@ -1,0 +1,69 @@
+@php $subject = $subject ?? null; @endphp
+
+<div class="row g-3">
+    <div class="col-12">
+        <x-input-label for="department_id" value="Formation doctorale" />
+        @if ($subject)
+            <p class="form-control-plaintext fw-semibold" id="department_id">{{ $subject->department->name }}</p>
+        @else
+            <select id="department_id" name="department_id" class="form-select" required>
+                <option value="">Sélectionnez une formation doctorale…</option>
+                @foreach ($departments as $department)
+                    <option value="{{ $department->id }}" @selected(old('department_id') == $department->id)>
+                        {{ $department->name }}
+                    </option>
+                @endforeach
+            </select>
+        @endif
+        <x-input-error :messages="$errors->get('department_id')" />
+    </div>
+
+    <div class="col-12">
+        <x-input-label for="title" value="Titre du sujet" />
+        @if ($subject)
+            <p class="form-control-plaintext fw-semibold" id="title">{{ $subject->title }}</p>
+        @else
+            <x-text-input id="title" name="title" value="{{ old('title') }}" required />
+        @endif
+        <x-input-error :messages="$errors->get('title')" />
+    </div>
+
+    @if ($subject)
+        <div class="col-12">
+            <div id="content-group-error" class="alert alert-danger d-none mb-0" role="alert">
+                Fill in Description, PhD student's responsibilities, Candidate profile, and Keywords together, or leave all four empty.
+            </div>
+        </div>
+    @endif
+
+    <div class="col-12">
+        <x-input-label for="description" value="Description" />
+        <textarea id="description" name="description" rows="5" class="form-control" required>{{ old('description', $subject?->description) }}</textarea>
+        <x-input-error :messages="$errors->get('description')" />
+    </div>
+
+    <div class="col-12">
+        <x-input-label for="responsibilities" value="Travail attendu du doctorant" />
+        <textarea id="responsibilities" name="responsibilities" rows="3" class="form-control">{{ old('responsibilities', $subject?->responsibilities) }}</textarea>
+        <x-input-error :messages="$errors->get('responsibilities')" />
+    </div>
+
+    <div class="col-12">
+        <x-input-label for="candidate_profile" value="Profil recherché" />
+        <textarea id="candidate_profile" name="candidate_profile" rows="3" class="form-control">{{ old('candidate_profile', $subject?->candidate_profile) }}</textarea>
+        <x-input-error :messages="$errors->get('candidate_profile')" />
+    </div>
+
+    <div class="col-12">
+        <x-input-label for="keywords" value="Mots-clés séparés par des virgules" />
+        <x-text-input id="keywords" name="keywords" value="{{ old('keywords', $subject?->keywords) }}" placeholder="Ex. apprentissage automatique, traitement du langage, science des données" />
+        <x-input-error :messages="$errors->get('keywords')" />
+    </div>
+</div>
+
+<div class="d-flex justify-content-end gap-2 mt-4">
+    <a href="{{ route('professor.subjects.index') }}" class="btn btn-outline-secondary">Annuler</a>
+    <button type="submit" class="btn btn-primary px-4">
+        {{ $subject ? 'Enregistrer les modifications' : 'Publier le sujet' }}
+    </button>
+</div>

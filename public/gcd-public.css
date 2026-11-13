@@ -1,0 +1,85 @@
+.gcd-hero{background:linear-gradient(120deg,#112b51,#184c7f);color:white;border-bottom:4px solid #a81d3b}
+.gcd-action{--bs-btn-color:#fff;--bs-btn-bg:#a81d3b;--bs-btn-border-color:#a81d3b;--bs-btn-hover-color:#fff;--bs-btn-hover-bg:#89152f;--bs-btn-hover-border-color:#89152f}
+
+.basket-notice {
+    position: fixed;
+    inset-block-start: 5.5rem;
+    inset-inline-end: 1.25rem;
+    z-index: 1080;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: .75rem;
+    width: min(23rem, calc(100% - 2.5rem));
+    padding: .9rem;
+    color: #112b51;
+    background: #fff;
+    border: 1px solid #d8e2ef;
+    border-inline-start: 4px solid #a81d3b;
+    border-radius: .8rem;
+    box-shadow: 0 10px 32px #112b512b;
+}
+.basket-notice-icon {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: #eaf1fa;
+    color: #184c7f;
+    font-weight: 700;
+}
+.basket-notice-link {
+    color: #184c7f;
+    font-size: .9rem;
+    font-weight: 600;
+    text-underline-offset: .2em;
+}
+.basket-notice .btn-close {
+    box-sizing: border-box;
+    width: 1.75rem;
+    height: 1.75rem;
+}
+@media (max-width: 575px) {
+    .basket-notice {
+        inset-block-start: auto;
+        inset-block-end: 1rem;
+        inset-inline-end: 1rem;
+        width: min(23rem, calc(100% - 2rem));
+    }
+}
+
+.gcd-catalogue-filters {
+    background: #e6eef8;
+    border: 2px solid #58779d;
+    border-inline-start: 5px solid #17487b;
+    box-shadow: 0 4px 12px #112b5114;
+}
+
+.gcd-catalogue-filters .form-label {
+    color: #112b51;
+    font-weight: 650;
+}
+
+.gcd-catalogue-filters :is(.form-control, .form-select) {
+    background-color: #fff;
+    border-color: #758ba5;
+}
+
+.gcd-catalogue-filters :is(.form-control, .form-select):focus {
+    border-color: #17487b;
+    box-shadow: 0 0 0 .2rem #17487b33;
+}
+
+.gcd-scan-dialog {
+    width: min(40rem, calc(100% - 1.5rem));
+    max-height: 90vh;
+    overflow: auto;
+}
+
+.gcd-scan-dialog::backdrop { background: #112b5199; }
+.gcd-scan-dialog video { max-height: 55vh; background: #112b51; }
+.gcd-scan-preview { max-height: 46vh; overflow: auto; background: #edf3fa; }
+.gcd-scan-preview img { display: block; width: 100%; max-width: none; }
+
+input[id^="replacement-"] { scroll-margin-top: 6rem; }
