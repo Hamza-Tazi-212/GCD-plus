@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ $title ? $title.' | '.config('app.name') : config('app.name') }}</title>
+    @include('partials.favicons')
 
     <link rel="stylesheet" href="{{ asset('gcd-public.css') }}">
 

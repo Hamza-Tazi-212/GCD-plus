@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title ?? 'Mon compte' }} · GCD+</title>
+    @include('partials.favicons')
     @vite(['resources/scss/app.scss', 'resources/js/app.js'])
     <link rel="stylesheet" href="{{ asset('gcd-public.css') }}">
 </head>
