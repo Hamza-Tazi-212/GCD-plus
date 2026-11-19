@@ -149,7 +149,3 @@ La démonstration est publiée en HTTPS sur [gcd-plus-estf.freehosting.dev](http
 - [Diagrammes de GCD+](docs/gcd-plus/diagrammes/README.md) : cas d’utilisation, classes, activités, séquence de candidature, états et architecture, avec sources PlantUML et rendus SVG.
 - [TP 5 et diagrammes de conception](docs/tp-seance-5/README.md).
 - [Tableau comparatif des pistes d’amélioration](docs/tableau-comparatif-gcd.pdf), utilisé comme source d’idées pour l’expérience utilisateur.
-
-## Provenance
-
-GCD+ adapte le projet CDOC de Yassine Khaldi à partir de la copie de travail fournie pour l’atelier. Avant de redistribuer cette adaptation, vérifier l’autorisation de publication du code de CDOC auprès de son auteur.
